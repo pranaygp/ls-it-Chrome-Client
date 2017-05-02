@@ -1,12 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
-const initialState = [{
-  text: 'Use Redux',
-  completed: false,
-  id: 0
-}];
+const initialState = [];
 
 const actionsMap = {
+  [ActionTypes.SET_TODO_LIST](state, action) {
+    return action.list;
+  },
   [ActionTypes.ADD_TODO](state, action) {
     return [{
       id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,

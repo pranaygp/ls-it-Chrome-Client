@@ -35,12 +35,12 @@ export default class TodoItem extends Component {
 
   handleComplete = () => {
     const { todo, completeTodo } = this.props;
-    completeTodo(todo.id);
+    completeTodo(todo._id);
   };
 
   handleDelete = () => {
     const { todo, deleteTodo } = this.props;
-    deleteTodo(todo.id);
+    deleteTodo(todo._id);
   };
 
   render() {
@@ -50,7 +50,7 @@ export default class TodoItem extends Component {
     if (this.state.editing) {
       element = (
         <TodoTextInput
-          text={todo.text}
+          text={todo.item}
           editing={this.state.editing}
           onSave={this.handleSave}
         />
@@ -58,14 +58,8 @@ export default class TodoItem extends Component {
     } else {
       element = (
         <div className={style.view}>
-          <input
-            className={style.toggle}
-            type="checkbox"
-            checked={todo.completed}
-            onChange={this.handleComplete}
-          />
           <label onDoubleClick={this.handleDoubleClick}>
-            {todo.text}
+            {todo.item}
           </label>
           <button
             className={style.destroy}
@@ -78,7 +72,6 @@ export default class TodoItem extends Component {
     return (
       <li
         className={classnames({
-          [style.completed]: todo.completed,
           [style.editing]: this.state.editing,
           [style.normal]: !this.state.editing
         })}

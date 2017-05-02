@@ -9,9 +9,8 @@ import TodoTextInput from '../../../app/components/TodoTextInput';
 function setup(editing = false) {
   const props = {
     todo: {
-      id: 0,
-      text: 'Use Redux',
-      completed: false
+      _id: 0,
+      item: 'Use Redux',
     },
     editTodo: sinon.spy(),
     deleteTodo: sinon.spy(),
@@ -45,23 +44,13 @@ describe('todoapp TodoItem component', () => {
     expect(div.type).to.equal('div');
     expect(div.props.className).to.equal(style.view);
 
-    const [input, label, button] = div.props.children;
-
-    expect(input.type).to.equal('input');
-    expect(input.props.checked).to.equal(false);
+    const [label, button] = div.props.children;
 
     expect(label.type).to.equal('label');
     expect(label.props.children).to.equal('Use Redux');
 
     expect(button.type).to.equal('button');
     expect(button.props.className).to.equal(style.destroy);
-  });
-
-  it('input onChange should call completeTodo', () => {
-    const { output, props } = setup();
-    const input = output.props.children.props.children[0];
-    input.props.onChange({});
-    expect(props.completeTodo.calledWith(0)).to.equal(true);
   });
 
   it('button onClick should call deleteTodo', () => {

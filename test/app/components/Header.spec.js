@@ -30,7 +30,7 @@ describe('todoapp Header component', () => {
 
     expect(input.type).to.equal(TodoTextInput);
     expect(input.props.newTodo).to.equal(true);
-    expect(input.props.placeholder).to.equal('What needs to be done?');
+    expect(input.props.placeholder).to.equal('Add stuff when you think of them!');
   });
 
   it('should call addTodo if length of text is greater than 0', () => {

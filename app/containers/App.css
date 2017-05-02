@@ -1,9 +1,19 @@
+@font-face {
+            font-family: FixEmoji;
+            unicode-range: U+20;
+            src: local("Arial")
+          }
 .normal {
   background: #fff;
   margin: 200px 0 40px 0;
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
               0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  outline: none
 }
 
 .normal input::-webkit-input-placeholder {
@@ -28,7 +38,6 @@
   position: absolute;
   top: -155px;
   width: 100%;
-  font-size: 100px;
   font-weight: 100;
   text-align: center;
   color: rgba(175, 47, 47, 0.15);
@@ -36,4 +45,7 @@
   -moz-text-rendering: optimizeLegibility;
   -ms-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
+  font-family: FixEmoji, Roboto Mono, sans-serif;
+  color: #111;
+  font-size: 68px;
 }

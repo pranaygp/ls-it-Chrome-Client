@@ -28,6 +28,8 @@
   display: block;
   line-height: 1.2;
   transition: color 0.4s;
+  font-family: Roboto Mono, sans-serif;
+  font-weight: 100;
 }
 
 .normal .destroy {
@@ -65,6 +67,7 @@
   border-bottom: none;
   padding: 0;
   composes: normal;
+  font-family: Roboto Mono, sans-serif;
 }
 
 .editing:last-child {
