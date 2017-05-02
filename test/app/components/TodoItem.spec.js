@@ -24,7 +24,7 @@ function setup(editing = false) {
   let output = renderer.getRenderOutput();
 
   if (editing) {
-    const label = output.props.children.props.children[1];
+    const label = output.props.children.props.children[0];
     label.props.onDoubleClick({});
     output = renderer.getRenderOutput();
   }
@@ -55,14 +55,14 @@ describe('todoapp TodoItem component', () => {
 
   it('button onClick should call deleteTodo', () => {
     const { output, props } = setup();
-    const button = output.props.children.props.children[2];
+    const button = output.props.children.props.children[1];
     button.props.onClick({});
     expect(props.deleteTodo.calledWith(0)).to.equal(true);
   });
 
   it('label onDoubleClick should put component in edit state', () => {
     const { output, renderer } = setup();
-    const label = output.props.children.props.children[1];
+    const label = output.props.children.props.children[0];
     label.props.onDoubleClick({});
     const updated = renderer.getRenderOutput();
     expect(updated.type).to.equal('li');
