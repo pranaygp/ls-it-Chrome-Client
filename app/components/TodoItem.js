@@ -59,7 +59,7 @@ export default class TodoItem extends Component {
       element = (
         <div className={style.view}>
           <label onDoubleClick={this.handleDoubleClick}>
-            {todo.item}
+            <div dangerouslySetInnerHTML={{ __html: todo.item }} />
           </label>
           <button
             className={style.destroy}
