@@ -1,5 +1,8 @@
 import React, { PropTypes, Component } from 'react';
+import { Offline, Online } from 'react-detect-offline';
+
 import TodoTextInput from './TodoTextInput';
+import style from './Header.css';
 
 export default class Header extends Component {
 
@@ -17,11 +20,18 @@ export default class Header extends Component {
     return (
       <header>
         <h1>lsit</h1>
-        <TodoTextInput
-          newTodo
-          onSave={this.handleSave}
-          placeholder="Add stuff when you think of them!"
-        />
+        <Offline>
+          <div className={style.offlineAlert}>
+            You're offline
+          </div>
+        </Offline>
+        <Online>
+          <TodoTextInput
+            newTodo
+            onSave={this.handleSave}
+            placeholder="Add stuff when you think of them!"
+          />
+        </Online>
       </header>
     );
   }

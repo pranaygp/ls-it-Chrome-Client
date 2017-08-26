@@ -108,27 +108,6 @@
   margin-bottom: -1px;
 }
 
-.toggleAll {
-  position: absolute;
-  top: -55px;
-  left: -12px;
-  width: 60px;
-  height: 34px;
-  text-align: center;
-  border: none; /* Mobile Safari */
-}
-
-.toggleAll:before {
-  content: '❯';
-  font-size: 22px;
-  color: #e6e6e6;
-  padding: 10px 27px 10px 27px;
-}
-
-.toggleAll:checked:before {
-  color: #737373;
-}
-
 /*
   Hack to remove background from Mobile Safari.
   Can't use it globally since it destroys checkboxes in Firefox
