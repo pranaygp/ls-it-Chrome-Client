@@ -22,5 +22,5 @@
     "newtab": "window.html"
   },
   "permissions": [ "contextMenus", "tabs", "storage", "https://github.com/*" ],
-  "content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:; connect-src  https://frigo.io wss://frigo.io; font-src https://fonts.gstatic.com;"
+  "content_security_policy": "object-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:; font-src https://fonts.gstatic.com;"
 }
